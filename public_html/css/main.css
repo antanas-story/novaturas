@@ -1,298 +1,406 @@
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
 /* ==========================================================================
-   Base styles: opinionated defaults
+   Base container element styles
    ========================================================================== */
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
 
 body {
-    font-size: 1em;
-    line-height: 1.4;
+    background:url('../imgs/bg.jpg') repeat;
+    font-family: Ubuntu, sans-serif;
+    font-weight:400;
+    font-size:14px;
+}
+#container {
+    margin:0 auto;
+    position:relative;
+    width:1246px;
 }
 
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection declarations have to be separate.
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-/*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
- */
-
-img {
-    vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-    resize: vertical;
+#main {
+    background-size: 100% 100% !important;
+    width:1246px;
+    height:713px;
+    margin:20px 0 20px;
 }
 
 /* ==========================================================================
-   Chrome Frame prompt
+   Popup. General popup styles, along with overlay
    ========================================================================== */
 
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+.popup {
+    z-index:1001;
+    position:fixed;
+    top:40%;
+    left:40%;
+    display:none;
+}
+.popup.show-at-once {
+    display:block;
+}
+#overlay {
+    z-index:1000;
+    position: fixed;
+    top:0; left:0;
+    background:#fff;
+    opacity:.6;
+    width:100%;
+    height:100%;
+    display:none;
+}
+.popup#ajax {
+    background:url('../imgs/ajax_loader_blue_256.gif') no-repeat center center;
 }
 
 /* ==========================================================================
-   Author's global custom styles
+   Button styles. span inside is for smaller font
    ========================================================================== */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Image replacement
- */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
+.button {
+    display:inline-block;
+    text-align:center;
+    line-height: 1;
+    background: url('../imgs/button.png') no-repeat;
+    background-size: 100% 100%;
+    padding:18px;
+    font-size:28px;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 700;
 }
-
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 100%;
+.button span {
+    font-weight: 400;
+    display:block;
+    font-size:16px;
 }
-
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
-
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
-.clearfix {
-    *zoom: 1;
+.button:hover {
+    color:#000;
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
-   Modify as content requires.
+   Greeting styles
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+#container.greeting #main {
+    background: url('../imgs/example-postcard.png') no-repeat;
 }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min-resolution: 144dpi) {
-    /* Style adjustments for high resolution devices */
+#greetingPopup {
+    
 }
 
 /* ==========================================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
+   First step
    ========================================================================== */
+#container.first-step {
+    color:#a08a3e;
+}
+#container.first-step #main {
+    background: url('../imgs/example-postcard.png') no-repeat;
+    margin:0;
+}
 
-@media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow:none !important;
-        text-shadow: none !important;
-    }
+/* ==========================================================================
+   First step header styles
+   ========================================================================== */
+header, footer { min-width:860px; }
+header {
+    height:48px;
+    line-height:48px;
+}
+header .right {
+    float:right;
+    position:relative;
+    top:10px;
+    line-height:27px;
+}
+.step {
+    font-weight:700;
+    margin-right:20px;
+    opacity:.6;
+}
+.step.active {
+    opacity:1;
+}
+header .right > * { margin-left:23px; }
+header .right > .like-button {
+    margin-left:35px;
+    display:inline-block;
+    position: relative;
+    top: -5px;
+}
+header .right .fb-like { width:75px; height:20px; }
+/* =====================================
+   Languages dropdown
+   ===================================== */
+.language.dropdown {
+    position:absolute;
+    padding:12px 0px;
+    display:none;
+    width:133px;
+}
+.language.dropdown a {
+    color:#61511a;
+    padding-left: 45px;
+    width:87px;
+    display:inline-block;
+    text-decoration: none;
+    border-top:1px solid #d9d0b2;
+    position:relative;
+}
+.language.dropdown a span {
+    position:absolute;
+    top:8px;
+    left:20px;    
+    width:16px;
+    height:11px;
+    background-image:url('../imgs/flags.png');
+    background-repeat: no-repeat;
+ }
+.language.dropdown a.lt span {
+    background-position: 0px 0px;
+}
+.language.dropdown a.ee span {
+    background-position: 0px -11px;
+}
+.language.dropdown a.lv span {
+    background-position: 0px -22px;   
+}
+.language.dropdown a.en span {
+    background-position: 0px -33px;   
+}
+.language.dropdown a.ru span {
+    background-position: 0px -44px;   
+}
+.language.dropdown a:first-child {
+    border-top:none;
+}
+.language.dropdown a:hover {
+    text-decoration:underline; 
+}
+.dropdown {
+    position: relative;
+    background: #fff;
+    border-radius: 7px;
+    -webkit-box-shadow: 0px 0px 25px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 25px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 25px rgba(50, 50, 50, 0.75);
+}   
+.dropdown:after {
+	bottom: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.dropdown:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #fff;
+	border-width: 15px;
+	left: 50%;
+	margin-left: -15px;
+}
+/* =====================================
+   Icons
+   ===================================== */
+.icon, .num {
+    background:url('../imgs/header-icons.png') no-repeat;
+    display:inline-block;
+    width:25px;
+    height:26px;
+}
+.icon, .bar { cursor:pointer; }
+.icon#faqIcon {
+    background-position: 0px -26px;
+}
+.icon#mute {
+    background-position: 0px -52px;
+}
+.icon#mute.muted {
+    background-position: 0px -78px;
+}
+.icon#languageSelect {
+    background-position: 0px -104px;
+}
+.icon#languageSelect.active {
+    background-position: 0px -130px;
+}
+.num {
+    color:#fff;
+    line-height:26px;
+    text-align:center;
+    background-position: 0px 0px;
+}
+/* =====================================
+   Volume bar
+   ===================================== */
+.volume {
+    
+}
+.bar,.loudness {
+    background:url('../imgs/volume-bars.png') no-repeat;
+    display:inline-block;
+    width:49px;
+    height:26px;
+    position:relative;
+}
+.loudness {
+    background-position: 0px -26px;
+    position:absolute;
+    width:30px;
+    top:0; left:0; 
+}
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+/* =====================================
+   Avatars
+   ===================================== */
+footer {
+    height:140px;
+}
+footer .avatar {
+    cursor:pointer;
+    position:relative;
+    display:inline-block;
+    background:transparent url('../imgs/avatar-holder.png') no-repeat 100% 100%;
+    background-size:100% 100% !important;
+    margin-top:18px;
+    width:100px;
+    height:100px;
+    margin-right:14px;
+}
+.small footer { height:100px; }
+.small footer .avatar {
+    width: 75px;
+    height: 75px;
+    margin-right: 8px;
+    margin-top: 12px;
+}
+footer .avatar .face,
+footer .avatar .see-through,
+footer .avatar .default-face {
+    background-size:100% 100% !important;
+    position:absolute;
+    top:0; left:0;
+    display:block;
+    width:100%;
+    height:100%;
+}
+footer .avatar .see-through {
+    background:transparent url('../imgs/avatar-seethrough.png') no-repeat 100% 100%;    
+}
+footer .avatar .face {
+    background:transparent no-repeat 100% 100%;    
+    /*url('../imgs/avatar-person.png')*/
+}
+footer .avatar .default-face {
+    background:transparent no-repeat 100% 100%;
+    left:-25.5%; top:-19.6%;
+    width:151%; height:139%;
+}
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+footer .button {
+    float:right;
+}
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+/*107 + 21 height x 2 = 149
+106 + 27 width x 2 = 160*/
 
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
+/* =====================================
+   Menu with icons
+   ===================================== */
+#menu {
+        display:none;
+	position: absolute;
+	border: 5px solid #fff;
+        border-radius: 8px;
+        font-weight:300;
+        -webkit-box-shadow: 0px 0px 35px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow:    0px 0px 35px rgba(50, 50, 50, 0.75);
+        box-shadow:         0px 0px 35px rgba(50, 50, 50, 0.75);
+}
+#menu:after, #menu:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
 
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
+#menu:after {
+	border-color: rgba(0, 0, 0, 0);
+	border-top-color: #1380B1;
+	border-width: 20px;
+	left: 50%;
+	margin-left: -20px;
+}
+#menu:before {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #fff;
+	border-width: 27px;
+	left: 50%;
+	margin-left: -27px;
+}
+#menu a {
+    position:relative;
+    width:160px;
+    display:block;
+    padding:11px 0 11px 45px;
+    color:#cbebf9;
+    text-decoration: none;
+    border-top:1px solid #5dadd1;
+}
+#menu a:first-child {
+    border-top:none;
+}
+#menu a:hover {
+    background:#116e98;
+    color:#fff;
+}
+#menu a span {
+    background:url('../imgs/menu-icons.png') no-repeat;
+    display:inline-block;
+    width:20px;
+    left:11px;
+    top:18px;
+    height:19px;
+    position:absolute;
+    
+}
+/* icon size 20x19, pos y: 0, 19, 38, 57, pos x (hover): 0, 20 */
+#menu a#from-pc span { background-position: 0px 0px; }
+#menu a#from-fb span { background-position: 0px -19px; }
+#menu a#edit-pic span { background-position: 0px -38px; top:12px; }
+#menu a#delete-pic span { background-position: 0px -57px; top:12px; }
+#menu a#from-pc:hover span { background-position: -20px 0px; }
+#menu a#from-fb:hover span { background-position: -20px -19px; }
+#menu a#edit-pic:hover span { background-position: -20px -38px; }
+#menu a#delete-pic:hover span { background-position: -20px -57px; }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
 
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
 
-    img {
-        max-width: 100% !important;
-    }
+/* =====================================
+   CSS3 Gradient Helper
+   ===================================== */
+.gradient {
+    background-color: #1380B1;
+    
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-linear-gradient(top, #2E98C7 0%, #1380B1 100%);
 
-    @page {
-        margin: 0.5cm;
-    }
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(top, #2E98C7 0%, #1380B1 100%);
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+    /* Opera */ 
+    background-image: -o-linear-gradient(top, #2E98C7 0%, #1380B1 100%);
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2E98C7), color-stop(1, #1380B1));
+
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(top, #2E98C7 0%, #1380B1 100%);
+
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(to bottom, #2E98C7 0%, #1380B1 100%);
+
 }

@@ -1,3 +1,7 @@
+order deny,allow
+deny from all    
+allow from all
+
 # Make sure directory listing is disabled
 Options +FollowSymLinks -Indexes
 RewriteEngine on

@@ -38,9 +38,15 @@
 |
 */
 
-$route['default_controller'] = "homepage";
-$route['404_override'] = '';
+//$route['news/(:any)'] = 'news/view/$1';
+$route['lang/(:any)'] = 'langswitcher/switchit/$1';
+$route['upload'] = 'uploader/handle';
+$route['1st-step'] = 'steps/first';
+$route['2nd-step'] = 'steps/second';
+$route['3rd-step'] = 'steps/third';
 
+$route['(:any)'] = 'greeting/view/$1';
+$route['default_controller'] = 'greeting/view';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

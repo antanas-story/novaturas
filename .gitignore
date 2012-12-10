@@ -10,6 +10,9 @@
 *~
 *.sass-cache
 
+# resources like .psd and etc files
+resources
+
 # OS or Editor folders
 .DS_Store
 .cache
