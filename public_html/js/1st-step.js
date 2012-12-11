@@ -23,7 +23,15 @@ $(function() {
             });
         }
     });
+    $("#from-pc").click(function(e) {
+        
+        console.log(e);
+        e.preventDefault();
+        console.log($("#manual-fine-uploader .qq-upload-button input").click());
+    });
 
+
+    var ajax = $("#ajax");
     $('#manual-fine-uploader').fineUploader({
       request: {
         endpoint: 'upload'
@@ -41,40 +49,19 @@ $(function() {
       //},
       autoUpload: true,
       debug: true
+    }).on('submit', function(event, id, fileName) {
+        showPopup(ajax);
     }).on('complete', function(event, id, fileName, responseJSON) {
       if (responseJSON.success) {
-        $(this).append('<img src="img/success.jpg" alt="' + fileName + '">');
+        var current = avatars.filter(".active").data("picture", fileName);
+        alert("cropping\n"+current.attr('id')+"\n"+fileName);
+        console.log(fileName);
+        closePopup();
+        //$(this).append('<img src="img/success.jpg" alt="' + fileName + '">');
       }
     });
-    $("form#imageUpload").submit(function(e) {
-        e.preventDefault();
-        var current = $(".avatar.active");
-        $.ajaxFileUpload({
-            url:'upload', 
-            secureuri:false,
-            fileElementId:'image',
-            dataType: 'json',
-            data: {
-                which: current.attr("id")
-            },
-            success: function (data, status) {
-                if(data.error != "") {                                                                
-                    alert(data.data);
-                    console.error(data.error);
-                } else {
-                    current.data("picture", full_path);
-                    alert("cropping");
-                    console.log(data.data);
-                    // Refresh image list
-                }
-            },
-            error: function (data, status, e) {
-                console.log(e);
-            }
-        });
-    });
 
-    var ajax = $("#ajax");
+    
         ajax.ajaxStart(function(){
             showPopup(ajax);
         })

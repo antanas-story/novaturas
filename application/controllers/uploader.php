@@ -23,7 +23,8 @@ class Uploader extends CI_Controller {
 
         // Call handleUpload() with the name of the folder, relative to PHP's getcwd()
         $result = $uploader->handleUpload('uploads/');
-            
-        return json_encode($result);
+        $uploadedName = $uploader->getUploadName();
+        $result["filename"] = $uploadedName;
+        echo json_encode($result);
     }
 }
