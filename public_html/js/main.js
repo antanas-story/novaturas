@@ -79,9 +79,6 @@ function closePopup() {
 
 function init_nav_header() {
         
-    audio = document.getElementById("audio");//me;
-    audio.volume = 0.6;
-    
     $("#languageSelect").click(function() {
         var icon = $(this);
         var dropdown = $("#languageDropdown");
@@ -100,6 +97,12 @@ function init_nav_header() {
         }
     });
     
+    audio = document.getElementById("audio");//me;
+    audio.volume = 0.6;
+    if($.cookie("volume")!==null) {
+        audio.volume = $.cookie("volume");
+        $("#volumeControl .loudness").css("width", (49*audio.volume)+"px");
+    }
     $("#mute").click(function() {
         var self = $(this);
         if(self.hasClass("muted")) {
@@ -118,6 +121,7 @@ function init_nav_header() {
     $("#volumeControl").click(function(e) {
         $(this).find(".loudness").css("width", e.offsetX+"px");
         audio.volume = Math.ceil(100*e.offsetX / $(this).width())/100;
+        $.cookie("volume", audio.volume);
         console.log(audio.volume);
         e.preventDefault();
         
