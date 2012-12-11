@@ -160,3 +160,77 @@ c,e,b),this._xhrs[a]=null,this._dequeue(a)}},_cancel:function(a){this._options.o
 (function(a){var b,c,d,e,f,g,h,i,j,k;g=["uploaderType"];d=function(a){a&&(a=i(a),h(a),"basic"===f("uploaderType")?b(new qq.FineUploaderBasic(a)):b(new qq.FineUploader(a)));return c};e=function(a,b){var d=c.data("fineuploader");if(b)void 0===d&&(d={}),d[a]=b,c.data("fineuploader",d);else return void 0===d?null:d[a]};b=function(a){return e("uploader",a)};f=function(a,b){return e(a,b)};h=function(b){var d=b.callbacks={};a.each((new qq.FineUploaderBasic)._options.callbacks,function(a){var b,e;b=/^on(\w+)/.exec(a)[1];
 b=b.substring(0,1).toLowerCase()+b.substring(1);e=c;d[a]=function(){var a=Array.prototype.slice.call(arguments);return e.triggerHandler(b,a)}})};i=function(b,d){var e,h;e=void 0===d?"basic"!==b.uploaderType?{element:c[0]}:{}:d;a.each(b,function(b,c){0<=a.inArray(b,g)?f(b,c):c instanceof a?e[b]=c[0]:a.isPlainObject(c)?(e[b]={},i(c,e[b])):a.isArray(c)?(h=[],a.each(c,function(b,c){c instanceof a?a.merge(h,c):h.push(c)}),e[b]=h):e[b]=c});if(void 0===d)return e};j=function(c){return"string"===a.type(c)&&
 !c.match(/^_/)&&void 0!==b()[c]};k=function(a){return b()[a].apply(b(),Array.prototype.slice.call(arguments,1))};a.fn.fineUploader=function(e){c=this;if(b()&&j(e))return k.apply(this,arguments);if("object"===typeof e||!e)return d.apply(this,arguments);a.error("Method "+e+" does not exist on jQuery.fineUploader");return this}})(jQuery);
+
+
+/*!
+ * jQuery Cookie Plugin v1.3
+ * https://github.com/carhartl/jquery-cookie
+ *
+ * Copyright 2011, Klaus Hartl
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.opensource.org/licenses/GPL-2.0
+ */
+(function ($, document, undefined) {
+
+	var pluses = /\+/g;
+
+	function raw(s) {
+		return s;
+	}
+
+	function decoded(s) {
+		return decodeURIComponent(s.replace(pluses, ' '));
+	}
+
+	var config = $.cookie = function (key, value, options) {
+
+		// write
+		if (value !== undefined) {
+			options = $.extend({}, config.defaults, options);
+
+			if (value === null) {
+				options.expires = -1;
+			}
+
+			if (typeof options.expires === 'number') {
+				var days = options.expires, t = options.expires = new Date();
+				t.setDate(t.getDate() + days);
+			}
+
+			value = config.json ? JSON.stringify(value) : String(value);
+
+			return (document.cookie = [
+				encodeURIComponent(key), '=', config.raw ? value : encodeURIComponent(value),
+				options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+				options.path    ? '; path=' + options.path : '',
+				options.domain  ? '; domain=' + options.domain : '',
+				options.secure  ? '; secure' : ''
+			].join(''));
+		}
+
+		// read
+		var decode = config.raw ? raw : decoded;
+		var cookies = document.cookie.split('; ');
+		for (var i = 0, l = cookies.length; i < l; i++) {
+			var parts = cookies[i].split('=');
+			if (decode(parts.shift()) === key) {
+				var cookie = decode(parts.join('='));
+				return config.json ? JSON.parse(cookie) : cookie;
+			}
+		}
+
+		return null;
+	};
+
+	config.defaults = {};
+
+	$.removeCookie = function (key, options) {
+		if ($.cookie(key) !== null) {
+			$.cookie(key, null, options);
+			return true;
+		}
+		return false;
+	};
+
+})(jQuery, document);

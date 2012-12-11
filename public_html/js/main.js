@@ -103,15 +103,18 @@ function init_nav_header() {
     $("#mute").click(function() {
         var self = $(this);
         if(self.hasClass("muted")) {
-            audio.muted = false;
             audio.play();
+            audio.muted = false;
             self.removeClass("muted");
         } else {
             audio.muted = true;
             self.addClass("muted");
         }
-    }).click();
-
+        $.cookie("muted", (audio.muted ? "true":"false"));
+    });//.click();
+    if($.cookie("muted")==="true") $("#mute").click();
+    else { audio.play(); }
+    
     $("#volumeControl").click(function(e) {
         $(this).find(".loudness").css("width", e.offsetX+"px");
         audio.volume = Math.ceil(100*e.offsetX / $(this).width())/100;
