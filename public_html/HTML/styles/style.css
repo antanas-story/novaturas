@@ -342,6 +342,63 @@ editPhotoPopup */
 	bottom: 0;
 }
 
+/*
+sharePopup */
+
+#container #sharePopup #shareBy {
+	background: 
+		url(../img/heading-line.gif) 0 0 repeat-x,
+		url(../img/heading-line.gif) 0 100% repeat-x;
+	padding: 20px 0 40px;
+	margin: 20px 0;
+}
+
+#container #sharePopup #shareBy .url .input {
+	color: #fff;
+	text-align: center;
+	background: #ba114f;
+	background: -webkit-gradient(linear, left top, left bottom, from(#1a78a1), to(#0c597a));
+	background: -webkit-linear-gradient(top, #1a78a1, #0c597a);
+	background: -moz-linear-gradient(top, #1a78a1, #0c597a);
+	background: -ms-linear-gradient(top, #1a78a1, #0c597a);
+	background: -o-linear-gradient(top, #1a78a1, #0c597a);
+	border-top: solid 1px #0c587a;
+	font-size: 26px;
+	padding: 10px 20px;
+	font-weight: 300;
+	min-width: 450px;
+	box-shadow: 
+		rgba(255,255,255,0.4) 0 1px 0,
+		inset rgba(0,0,0,0.6) 0 0 0;
+}
+
+#container #sharePopup .buttons-container {
+	padding: 40px 0 20px;
+}
+
+#container #sharePopup .buttons-container a {
+	margin: 0 20px;
+}
+
+#container #sharePopup #shareBy .mail {
+	position: relative;
+	margin-top: 20px;
+}
+
+#container #sharePopup #shareBy .mail .input {
+	margin-left: 10px;
+}
+
+#container #sharePopup #shareBy a.back {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: url(../img/button-back.png) 0 0 no-repeat;
+	display: block;
+	left: 80px;
+	top: 7px;
+}
+
 #container .popup .error {
 	background: rgba(250,240,120,1);
 	display: inline-block;
@@ -408,7 +465,8 @@ a.button:active {
 	transition: 		background .3s ease-in-out;
 }
 
-a.simple-button {
+a.simple-button,
+button.button {
 	display: inline-block;
 	margin: 0;
 	text-align: center;
@@ -440,6 +498,19 @@ a.simple-button {
 	-moz-transition: 	background .3s ease-in-out;
 	transition: 		background .3s ease-in-out;
 }
+
+button.button {
+	border-top: 1px solid #ed8eae;
+	background: #ba114f;
+	background: -webkit-gradient(linear, left top, left bottom, from(#dc2c64), to(#ba114f));
+	background: -webkit-linear-gradient(top, #dc2c64, #ba114f);
+	background: -moz-linear-gradient(top, #dc2c64, #ba114f);
+	background: -ms-linear-gradient(top, #dc2c64, #ba114f);
+	background: -o-linear-gradient(top, #dc2c64, #ba114f);
+	cursor: pointer;
+	margin-left: 10px;
+}
+
 
 .input {
 	border: solid 1px #1178a5;

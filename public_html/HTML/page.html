@@ -14,6 +14,31 @@
 </head>
 <body>
 <div id="container" class="first-step">
+	<div id="sharePopup" class="popup with-overlay show-at-once">
+	    <a href="#" class="close-button" onclick="closePopup();return false;" title="close-button-txt"></a>
+		<h2><span>Jūsų atvirukas jau sukurtas!<br>Dabar beliko nusiųsti draugams</span></h2>
+		<section id="shareBy">
+			<div class="url">
+				<p>Ši unikali nuoroda veda į jūsų atviruką ir sveikinimą.</p>
+				<input type="text" value="http://novaturas.lt/atvirute/plj569s5g" class="input">
+			</div>
+			<div class="mail">
+				<a href="#" class="back"></a>
+				<form action="#">
+					<input type="text" placeholder="Atvirukas nuo" class="input">
+					<input type="text" placeholder="Draugo el. pašto adresas" class="input">
+					<button class="button">Siųsti</button>
+				</form>
+			</div>
+		</section><!-- end shareBy -->
+		<div class="buttons-container">
+			<a href="#" class="simple-button b-fb">Dalintis facebook`e</a>
+			<a href="#" class="simple-button b-mail">Siųsti el.paštu</a>
+			<a href="#" class="simple-button b-save">Išsaugoti kompiuteryje</a>	
+		</div>
+	</div><!-- end sharePopup -->
+
+
 	<div id="editPhotoPopup" class="popup with-overlay show-at-once">
 	    <a href="#" class="close-button" onclick="closePopup();return false;" title="close-button-txt"></a>
 		<h2><span>Pasinaudokite redagavimo įrankiais<br>ir atvirukas bus puikus</span></h2>
