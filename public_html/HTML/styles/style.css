@@ -263,8 +263,82 @@ editPhotoPopup */
 	text-align: left;
 	width: 380px;
 	margin-left: 40px;
+	position: relative;
+	padding-bottom: 100px;
+	min-height: 410px;
 }
 
+#container #editPhotoTools .slider-zoom,
+#container #editPhotoTools .slider-rotate {
+	clear: both;
+	padding-bottom: 40px;
+	margin-top: 40px;
+	background: url(../img/heading-line.gif) 0 100% repeat-x;
+}
+
+#container #editPhotoTools .slider {
+	height: 30px;
+	position: relative;
+	padding: 0 30px;
+}
+
+#container #editPhotoTools .slider .plus,
+#container #editPhotoTools .slider .minus {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	background: url(../img/slider-icons.png) 0 6px no-repeat;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+}
+
+#container #editPhotoTools .slider .plus {
+	left: auto;
+	right: 0;
+	background: url(../img/slider-icons.png) 7px -20px no-repeat;
+}
+
+#container #editPhotoTools .slider .bar {
+	width: 100%;
+	float: left;
+	background: #fff;
+	height: 8px;
+	margin-top: 10px;
+	border: solid 1px #1178a5;
+	box-shadow: 
+		rgba(255,255,255,0.4) 0 1px 0,
+		inset rgba(0,0,0,0.6) 0 1px 3px;
+}
+
+#container #editPhotoTools .slider .point {
+	position: absolute;
+	top: 2px;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	float: left;
+	border: solid 2px #dd7596;
+	background: #ba114f;
+	background: -webkit-gradient(linear, left top, left bottom, from(#dc2c64), to(#ba114f));
+	background: -webkit-linear-gradient(top, #dc2c64, #ba114f);
+	background: -moz-linear-gradient(top, #dc2c64, #ba114f);
+	background: -ms-linear-gradient(top, #dc2c64, #ba114f);
+	background: -o-linear-gradient(top, #dc2c64, #ba114f);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: rgba(0,0,0,.8) 0px 0px 4px;
+	-moz-box-shadow: rgba(0,0,0,.8) 0px 0px 4px;
+	box-shadow: rgba(0,0,0,.8) 0px 0px 4px;
+}
+
+#container #editPhotoTools a.button {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
 
 #container .popup .error {
 	background: rgba(250,240,120,1);
