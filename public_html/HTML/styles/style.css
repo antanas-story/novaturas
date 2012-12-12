@@ -271,8 +271,8 @@ editPhotoPopup */
 #container #editPhotoTools .slider-zoom,
 #container #editPhotoTools .slider-rotate {
 	clear: both;
-	padding-bottom: 40px;
-	margin-top: 40px;
+	padding-bottom: 30px;
+	margin-top: 30px;
 	background: url(../img/heading-line.gif) 0 100% repeat-x;
 }
 
@@ -315,7 +315,7 @@ editPhotoPopup */
 #container #editPhotoTools .slider .point {
 	position: absolute;
 	top: 2px;
-	left: 50%;
+	left: 0;
 	width: 20px;
 	height: 20px;
 	float: left;
@@ -332,6 +332,8 @@ editPhotoPopup */
 	-webkit-box-shadow: rgba(0,0,0,.8) 0px 0px 4px;
 	-moz-box-shadow: rgba(0,0,0,.8) 0px 0px 4px;
 	box-shadow: rgba(0,0,0,.8) 0px 0px 4px;
+	cursor: pointer;
+	margin: 0 30px;
 }
 
 #container #editPhotoTools a.button {
