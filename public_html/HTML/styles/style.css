@@ -409,6 +409,84 @@ sharePopup */
 	color: #062938;
 }
 
+
+
+/* Greeting
+--------------------------------------------------------------------------------- */
+
+#container #greeting {
+	font-family: Courgette;
+	border: solid 10px #fff5c3;
+	background: url(../img/greeting.jpg) 0 0 repeat-x #f6f5f0;
+	width: 655px;
+	height: 487px;
+	padding: 30px 60px;
+	margin: 25px auto;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	color: #112629;
+	font-size: 20px;
+	overflow: hidden;
+}
+
+#container #greeting .content {
+	height: 457px;
+
+	background: #ccc;
+}
+
+#container #greeting h2 {
+	color: #112629;
+	font-size: 36px;
+	text-transform: none;
+	text-shadow: 0 0 0 #0f506c;
+	background: url(../img/greeting-heading-line.gif) 0 11px repeat-x;
+	line-height: 18px;
+	margin: 25px 0;
+}
+
+
+#container #greeting h2 span {
+	display: inline-block;
+	padding: 0 10px;
+	background: url(../img/greeting.jpg) 50% 0;
+	padding-bottom: 25px;
+}
+
+#container #greeting p.author {
+	position: absolute;
+	bottom: 0;
+	right: 120px;
+	font-size: 16px;
+}
+
+#container #greeting .edit {
+	font-family: Ubuntu, "Ubuntu Light", "Ubuntu Condensed";
+}
+
+#container #greeting .input-edit,
+#container #greeting textarea {
+	font-family: Ubuntu, "Ubuntu Light", "Ubuntu Condensed";
+	width: 630px;
+	border: dashed 1px #808987;
+	padding: 10px;
+	background: rgba(255,255,255,.5);
+	display: block;
+	margin: 0 0 30px;
+	float: left;
+	font-size: 16px;
+}
+
+#container #greeting input::-webkit-input-placeholder { color: #808987;}
+#container #greeting input:-moz-placeholder { color: #808987;}
+#container #greeting textarea::-webkit-input-placeholder { color: #808987;}
+#container #greeting textarea:-moz-placeholder { color: #808987;}
+
+#container #greeting textarea {
+	height: 200px;
+}
+
 #container .popup .error a {
 	color: #bc1d51;
 }
