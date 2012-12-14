@@ -320,8 +320,8 @@ editPhotoPopup */
 	background: url(../img/elements.png) -240px 0 no-repeat;
 }
 
-#container #editPhotoTools .slider .plus:hover {	background: url(../img/elements.png) -300px -60px no-repeat;}
-#container #editPhotoTools .slider .minus:hover {	background: url(../img/elements.png) -240px -60px no-repeat;}
+#container #editPhotoTools .slider .minus:hover {	background: url(../img/elements.png) -300px -60px no-repeat;}
+#container #editPhotoTools .slider .plus:hover {	background: url(../img/elements.png) -240px -60px no-repeat;}
 
 
 #container #editPhotoTools .slider .bar {
