@@ -41,6 +41,8 @@
 //$route['news/(:any)'] = 'news/view/$1';
 //$route['lang/(:any)'] = 'langswitcher/switchit/$1';
 $route['upload'] = 'uploader/handle';
+$route['update'] = 'steps/update';
+$route['send-email'] = 'email/send';
 $route['([a-zA-Z]{2})/create'] = 'steps/create/$1';
 
 $route['([a-zA-Z]{2})/(:any)'] = 'greeting/view/$1/$2';

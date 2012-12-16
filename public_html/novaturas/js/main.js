@@ -32,7 +32,10 @@ $(function() {
                 newH = newW / goodRatio;
         }*/
 
-        if(newW < minWidth) return;
+        if(newW < minWidth) {
+            fitElement.center();
+            return;
+        }
 
 
         resizeElement[0].style.width = newW + "px";
@@ -64,6 +67,7 @@ $(function() {
         $("#overlay").show();
     }*/
     init_nav_header();
+    showPopup(".show-at-once");
 });
 
 function showPopup(selector) {
@@ -84,12 +88,12 @@ function closePopup(selector) {
         var id = $(selector).hide().attr("id");
         overlay.removeClass(id);
     } else {
-        $(".popup:visible").each(function() {
+        $(".popup:visible:not(.permanent)").each(function() {
             $(this).hide();
             overlay.removeClass($(this).attr("id"));
         });
     }
-    if($(".popup:visible").length <= 0)
+    if($(".popup:visible:not(.permanent)").length <= 0)
         $("#overlay").hide();
 }
 
@@ -122,7 +126,7 @@ function init_nav_header() {
     $("#mute").click(function() {
         var self = $(this);
         if(self.hasClass("muted")) {
-            audio.play();
+            if(!$.browser.msie) audio.play();
             audio.muted = false;
             self.removeClass("muted");
         } else {
@@ -132,7 +136,7 @@ function init_nav_header() {
         $.cookie("muted", (audio.muted ? "true":"false"));
     });//.click();
     if($.cookie("muted")==="true") $("#mute").click();
-    else { audio.play(); }
+    else { if(!$.browser.msie) audio.play(); }
     
     $("#volumeControl").click(function(e) {
         $(this).find(".loudness").css("width", e.offsetX+"px");

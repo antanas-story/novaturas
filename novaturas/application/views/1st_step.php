@@ -2,7 +2,12 @@
     <?php
     // main editing window
     ?>
-    <div class="main first-step">
+    <div class="main first-step" id="canvasContainer">
+        <?php
+        // All avatar hovers that overlay on the faces
+        require APPPATH."/views/1st-step/avatar_hovers.php";
+        ?>
+        <canvas id="canvas" width=""></canvas>
     </div><!--! end of .main.first-step -->
     
     
@@ -24,13 +29,3 @@
          class="hidden"></div>
     <div id="ajax" class="popup with-overlay wait-forever"></div>         
 </div><!--! end of #1st-step -->
-
-
-
-
-<?php if(ENVIRONMENT=="development") {
-// path to application folder
-// echo APPPATH."<br />";
-// all locale strings
-//var_dump($s);
-} ?>

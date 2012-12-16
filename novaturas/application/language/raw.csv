@@ -42,6 +42,7 @@ faq,button-text,Judam toliau,Continue,Продолжить,Turpināt,Jätka
 2nd-step-greeting-text,headline-placeholder,Antraštė,Headline,Заголовок,Virsraksts,Pealkiri
 2nd-step-greeting-text,greeting-text-placeholder,Jūsų sveikinimo tekstas,Your greeting text,Текст поздравления,Tavs apsveikuma teksts,Sinu tervitustekst
 2nd-step-greeting-text,signature-placeholder,Siuntėjo parašas,Sender's signature,Missing,Missing,Missing
+2nd-step-greeting-text,review-greeting,Peržiūrėti ,Review,Missing,Missing,Missing
 2nd-step-greeting-text,button-headline,Liuks!,Nice!,Нравится!,Patīk!,Väga hea!
 2nd-step-greeting-text,button-text,Einam toliau,Continue,Продолжить,Turpināt,Jätka
 3rd-step-share-it,share-it-headline,Išsiųskite atviruką,Share with Your friends,Поделиться с друзьями,Dalīties ar draugiem,Jaga sõpradega
@@ -50,12 +51,16 @@ faq,button-text,Judam toliau,Continue,Продолжить,Turpināt,Jätka
 3rd-step-share-it,button-share-by-facebook,Dalintis facebook`e,Share it on facebook,Поделись на Facebook,Dalies ar to Facebook,Jaga seda Facebookis
 3rd-step-share-it,button-share-by-email,Siųsti el.paštu,Send it by email,Пошли по эл.почте,Aizsūti pa epastu,Saada e-mailiga
 3rd-step-share-it,button-save-to-pc,Išsaugoti kompiuteryje,Save it on computer,Сохрани на компьютер,Saglabā datorā,Salvesta oma arvutisse
-3rd-step-share-it,email-subject,Gavote draugo ir „NOVATURO“ sveikinimą,"You received greeting from Your friend and ""NOVATOURS""","Вы получили поздравительную открытку от Вашего друга и ""NOVATOURS""","Jūs saņēmāt apsveikumu no Jūsu drauga un ""NOVATOURS""",Sinuni jõudsid tervitused sõbralt ja NOVATOURSilt
-3rd-step-share-it,email-text,"Sveiki, šv. Kalėdų proga – originalus atvirukas skirtas būtent jums nuo „NOVATURO“ ir jūsų draugo: {link}","Hi, follow this link to see personalized Christmas greeting from ""NOVATOURS"" and Your friend: {link}","Привет, пройди по этому линку, чтобы увидеть поздравительную открытку специально для тебя от ""NOVATOURS"" и твоего друга","Sveiki, seko šai saitei, lai redzētu apsveikumu tieši Tev no ""NOVATOURS"" un Tava drauga","Hei, vajuta sellele lingile, et näha personaliseeritud jõulutervitust NOVATOURSilt ja Sinu sõbralt: {link}"
+3rd-step-share-it,email-subject,Gavote draugo $1 ir „NOVATURO“ sveikinimą,"You received greeting from Your friend $1 and ""NOVATOURS""","Вы получили поздравительную открытку от Вашего друга $1 и ""NOVATOURS""","Jūs saņēmāt apsveikumu no Jūsu drauga $1 un ""NOVATOURS""",Sinuni jõudsid tervitused sõbralt $1 ja NOVATOURSilt
+3rd-step-share-it,email-text,"Sveiki,<br />šv. Kalėdų proga – originalus atvirukas skirtas būtent jums nuo „NOVATURO“ ir jūsų draugo:<br />{link}","Hi,<br />follow this link to see personalized Christmas greeting from ""NOVATOURS"" and Your friend:<br />{link}","Привет,<br />пройди по этому линку, чтобы увидеть поздравительную открытку специально для тебя от ""NOVATOURS"" и твоего друга<br />{link}","Sveiki,<br />seko šai saitei, lai redzētu apsveikumu tieši Tev no ""NOVATOURS"" un Tava drauga<br />{link}","Hei,<br />vajuta sellele lingile, et näha personaliseeritud jõulutervitust NOVATOURSilt ja Sinu sõbralt:<br />{link}"
 3rd-step-share-it,email-name-caption,Atvirukas nuo:,Greeting from:,Поздравление от:,Apsveikums no:,Tervitused:
 3rd-step-share-it,email-send-to-caption,Draugo el. pašto adresas,Your friends e-mail,Эл.почта друга,Tava drauga epasts,Sinu sõbra e-mail
+3rd-step-share-it,email-sent-as,info@novaturas.lt,info@novaturas.lt,info@novaturs.lt,info@novatours.lv,info@novatours.ee
 3rd-step-share-it,email-button-send,Siųsti!,Send!,Послать!,Sūtīt!,Saada!
 3rd-step-share-it,email-success,Atvirukas sėkmingai išsiųstas!,Greeting successfully sent!,Поздравление отправлено удачно!,Apsveikums aizsūtīts veiksmīgi!,Tervitused edastatud!
+3rd-step-share-it,email-fail,"Nepavyko išsiųsti laiško, mėginkite dar kartą.","Failed to send the email, try again.",Missing,Missing,Missing
+3rd-step-share-it,email-error-no-name,Įveskite savo vardą,Please enter your name,Missing,Missing,Missing
+3rd-step-share-it,email-error-bad-email,Įvestas blogas el. pašto adresas.,Invalid email address,Missing,Missing,Missing
 facebook,post-title,„Novaturo“ ir jūsų draugo kalėdinis sveikinimas,"""NOVATOURS"" and Your friend's christmas greeting",Рождественское поздравление от NOVATOURS и твоего друга ,Ziemassvētku apsveikums no NOVATOURS un Tava drauga,NOVATOURSi ja Sinu sõbra jõulutervitused
 facebook,post-description,"Spustelkite ir pasižiūrėkite, kokį atviruką sukūrė jūsų draugas. Kurkite ir jūs - pasveikinkite bičiulius!",Follow this link in order to see greeting created by Your friend. Create Your own and congratulate Your friends.,"Перейди по ссылке, чтобы получить поздравление от друга. Создай свою открытку для своих друзей. ","Seko šai saitei,lai saņemtu apsveikumu no drauga. Izveido savu apsveikumu un apsveic draugus.","Vajuta sellele lingile, et näha oma sõbra saadetud tervitust. Loo oma tervitus ja saada see oma sõpradele."
 other,error-facebook-not-logged-in,Turite prisijungti prie Facebook`o ir leisti prieiti prie jūsų draugų nuotraukų,You must log in to Your Facebook account and allow ,Зарегистрируйся на свою Facebook страничку,Pievienojies savam Facebook profilam,Sisene oma Facebooki kontole

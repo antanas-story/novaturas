@@ -7,7 +7,7 @@ class Uploader extends CI_Controller {
     {
         parent::__construct();
 
-        $this->jobId = $this->session->userdata("jobid");
+        $this->jobId = $this->session->userdata("jobId");
         if($this->jobId==false) {
             die();
         }

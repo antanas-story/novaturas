@@ -15,8 +15,8 @@
   <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Courgette&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="<?php echo base_url()?>css/normalize.css">
-  <link rel="stylesheet" href="<?php echo base_url()?>css/main.css">
   <link rel="stylesheet" href="<?php echo base_url()?>css/style.css">
+  <link rel="stylesheet" href="<?php echo base_url()?>css/main.css">
 
   <script src="<?php echo base_url()?>js/vendor/modernizr-2.6.1.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
@@ -26,6 +26,7 @@
   && document.write('<script src="<?php echo base_url()?>js/vendor/jquery-ui-1.9.2.min.js"><\/script>'))
   </script>
 
+  <script src="<?php echo base_url() ?>js/jquery.rotateAndScale.js"></script>
 
   <!-- scripts concatenated and minified via ant build script-->
   <script src="<?php echo base_url()?>js/plugins.js"></script>

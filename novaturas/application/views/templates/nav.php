@@ -1,11 +1,11 @@
     <header>
-        <a id="backTo1st" class="step active" title="<?php echo $s['other']['1st-step-desc'] ?>">
+        <a data-step="1st" class="step 1st active" title="<?php echo $s['other']['1st-step-desc'] ?>">
             <span class="num">1</span> <?php echo $s['faq']['1st-step-headline'] ?>
         </a>
-        <a id="backTo2nd" class="step" title="<?php echo $s['other']['2nd-step-desc'] ?>">
+        <a data-step="2nd" class="step 2nd" title="<?php echo $s['other']['2nd-step-desc'] ?>">
             <span class="num">2</span> <?php echo $s['faq']['2nd-step-headline'] ?>
         </a>
-        <a class="step" data-title="<?php echo $s['other']['3rd-step-desc'] ?>">
+        <a data-step="3rd" class="step 3rd" data-title="<?php echo $s['other']['3rd-step-desc'] ?>">
             <span class="num">3</span> <?php echo $s['faq']['3rd-step-headline'] ?>
         </a>
         

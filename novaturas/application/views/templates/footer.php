@@ -1,4 +1,14 @@
-
+<?php if(ENVIRONMENT=="development") {
+/*foreach($characters as $character=>$info) {
+    echo '$config["character_info"]["'.$character.'"] = ';
+    echo 'array("x"=>'.($info['x']-57).',"y"=>'.($info['y']-45).',"scale"=>'.$info['scale'].');';
+    echo '<br />';
+} echo '.<br />';*/
+// path to application folder
+// echo APPPATH."<br />";
+// all locale strings
+//var_dump($s);
+} ?>
   <div id="overlay">
   </div>
 

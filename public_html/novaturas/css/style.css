@@ -37,7 +37,6 @@ Author URI: http://true-story.lt/
 	background: url(../imgs/popup-texture.jpg) 0 0 repeat-x #258fbf;
 	width: 940px;
 	padding: 40px;
-	margin: 25px auto;
 	border: solid 5px #fff;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -47,10 +46,14 @@ Author URI: http://true-story.lt/
 	-webkit-box-shadow: 0px 0px 10px #666666;
 	box-shadow: 0px 0px 10px #666666;
 	/*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
-	position: relative;
 	text-align: center;
 	color: #a4d1e5;
 	font-size: 16px;
+        position:absolute;
+        top:25px;
+        left:50%;
+        display:none;    
+        z-index:1001;
 }
 
 .button-container {
@@ -244,6 +247,21 @@ editPhotoPopup */
 	border: solid 5px #fff;
 	overflow: hidden;
 	margin: 0 0 30px;
+        position:relative;
+}
+#container #editPhotoContainer .overlay {
+    z-index:1015;
+    pointer-events: none;
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:url('../imgs/crop-stroke-with-bg.png') no-repeat center center;
+}
+#container #editPhotoContainer figure img {
+    cursor:move;
+    z-index:1014;
+    left:0;
+    top:0;
 }
 
 #container #editPhotoTools {
@@ -267,11 +285,15 @@ editPhotoPopup */
 #container #editPhotoTools .slider {
 	height: 30px;
 	position: relative;
-	padding: 0 30px;
+        left:30px;
+        width: 320px;
 }
 
-#container #editPhotoTools .slider .plus,
-#container #editPhotoTools .slider .minus {
+#container #editPhotoTools .sliderWrap {
+    position:relative;
+}
+#container #editPhotoTools .sliderWrap .plus,
+#container #editPhotoTools .sliderWrap .minus {
 	position: absolute;
 	display: block;
 	left: 0;
@@ -282,7 +304,7 @@ editPhotoPopup */
 	cursor: pointer;
 }
 
-#container #editPhotoTools .slider .plus {
+#container #editPhotoTools .sliderWrap .plus {
 	left: auto;
 	right: 0;
 	background: url(../imgs/slider-icons.png) 7px -20px no-repeat;
@@ -304,7 +326,7 @@ editPhotoPopup */
 	position: absolute;
 	top: 2px;
         z-index:30;
-	left: 0;
+	left: 150px;
 	width: 20px;
 	height: 20px;
 	float: left;
@@ -322,7 +344,7 @@ editPhotoPopup */
 	-moz-box-shadow: rgba(0,0,0,.8) 0px 0px 4px;
 	box-shadow: rgba(0,0,0,.8) 0px 0px 4px;
 	cursor: pointer;
-	margin: 0 30px;
+	
 }
 
 #container #editPhotoTools a.button {
@@ -515,7 +537,7 @@ a.button {
         cursor:pointer;
 }
 
-a.button span {	font-size: 16px;}
+a.button span {	font-size: 16px; display:block; }
 
 a.button:hover {
 	border-top-color: #ed8eae;
