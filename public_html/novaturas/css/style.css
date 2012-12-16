@@ -28,10 +28,13 @@ Author URI: http://true-story.lt/
 	height: 26px;
 	display: block;
 	position: absolute;
-	background: url(../imgs/icon-close.png) 0 0 no-repeat;
+	background: url(../imgs/elements.png) -180px 0 no-repeat;
 	top: 10px;
 	right: 10px;
 }
+
+#container .popup a.close-button:hover {	background: url(../imgs/elements.png) -180px -60px no-repeat;}
+
 
 #container .popup {
 	background: url(../imgs/popup-texture.jpg) 0 0 repeat-x #258fbf;
@@ -199,6 +202,17 @@ FbPopup */
 	position: relative;
 }
 
+#container #fbPopup #imgFbThumbs #slider figure.selected img,
+#container #fbPopup #imgFbThumbs #slider img:hover {
+	-webkit-box-shadow: rgba(0,0,0,.3) 0px 0px 7px;
+	-moz-box-shadow: rgba(0,0,0,.3) 0px 0px 7px;
+	box-shadow: rgba(0,0,0,.3) 0px 0px 7px;
+	border: solid 3px #45abd8;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: 	all .3s ease-in-out;
+	transition: 		all .3s ease-in-out;
+}
+
 #container #fbPopup #imgFbThumbs figure {
         border: solid 3px #fff;
 	margin: 10px;
@@ -211,18 +225,14 @@ FbPopup */
         background-repeat: no-repeat;
         background-size: cover;
 }
-#container #fbPopup #slider figure:hover, 
-#container #fbPopup #slider figure.selected {
-	border: solid 3px #000;
-}
 
 
 #container #fbPopup #imgFbThumbs #slider a.nav-prev,
 #container #fbPopup #imgFbThumbs #slider a.nav-next {
-	display: none;
+	display: block;
 	width: 52px;
 	height: 52px;
-	background: url(../imgs/slider-nav.png) 0 0 no-repeat;
+	background: url(../imgs/elements.png) 0 0 no-repeat;
 	position: absolute;
 	right: 0;
 	top: 40%;
@@ -231,7 +241,11 @@ FbPopup */
 #container #fbPopup #imgFbThumbs #slider a.nav-next {
 	left: 0;
 	right: auto;
+	background: url(../imgs/elements.png) -60px 0 no-repeat;
 }
+
+#container #fbPopup #imgFbThumbs #slider a.nav-prev:hover {	background: url(../imgs/elements.png) 0 -60px no-repeat;}
+#container #fbPopup #imgFbThumbs #slider a.nav-next:hover {	background: url(../imgs/elements.png) -60px -60px no-repeat;}
 
 /*
 editPhotoPopup */
@@ -285,8 +299,7 @@ editPhotoPopup */
 #container #editPhotoTools .slider {
 	height: 30px;
 	position: relative;
-        left:30px;
-        width: 320px;
+	padding: 0 30px;
 }
 
 #container #editPhotoTools .sliderWrap {
@@ -297,18 +310,22 @@ editPhotoPopup */
 	position: absolute;
 	display: block;
 	left: 0;
-	top: 0;
-	background: url(../imgs/slider-icons.png) 0 6px no-repeat;
-	width: 25px;
-	height: 25px;
+	top: 2px;
+	background: url(../imgs/elements.png) -300px 0 no-repeat;
+	width: 26px;
+	height: 26px;
 	cursor: pointer;
 }
 
 #container #editPhotoTools .sliderWrap .plus {
 	left: auto;
 	right: 0;
-	background: url(../imgs/slider-icons.png) 7px -20px no-repeat;
+	background: url(../imgs/elements.png) -240px 0 no-repeat;
 }
+
+#container #editPhotoTools .slider .plus:hover {	background: url(../imgs/elements.png) -300px -60px no-repeat;}
+#container #editPhotoTools .slider .minus:hover {	background: url(../imgs/elements.png) -240px -60px no-repeat;}
+
 
 #container #editPhotoTools .slider .bar {
 	width: 100%;
@@ -344,7 +361,14 @@ editPhotoPopup */
 	-moz-box-shadow: rgba(0,0,0,.8) 0px 0px 4px;
 	box-shadow: rgba(0,0,0,.8) 0px 0px 4px;
 	cursor: pointer;
-	
+	margin: 0 30px;
+}
+
+#container #editPhotoTools .slider .point:hover {
+	border: solid 2px #ba114f;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: 	all .3s ease-in-out;
+	transition: 		all .3s ease-in-out;
 }
 
 #container #editPhotoTools a.button {
@@ -404,14 +428,18 @@ sharePopup */
 	position: absolute;
 	width: 30px;
 	height: 30px;
-	background: url(../imgs/button-back.png) 0 0 no-repeat;
+	background: url(../imgs/elements.png) -120px 0 no-repeat;
 	display: block;
 	left: 80px;
 	top: 7px;
 }
 
-#container .popup .error {
-	background: rgba(250,240,120,1);
+#container #sharePopup #shareBy a.back:hover {	background: url(../imgs/elements.png) -120px -60px no-repeat;}
+
+
+#container .popup .error,
+#container .popup .success {
+	background: #FF9;
 	display: inline-block;
 	padding: 15px;
 	margin: 25px 0;
@@ -531,23 +559,25 @@ a.button {
 	vertical-align: middle;
 	text-shadow: 0px 1px 3px #73062e;
 	text-transform: uppercase;
-	-webkit-transition: background .3s ease-in-out;
-	-moz-transition: 	background .3s ease-in-out;
-	transition: 		background .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: 	all .3s ease-in-out;
+	transition: 		all .3s ease-in-out;
         cursor:pointer;
 }
 
 a.button span {	font-size: 16px; display:block; }
 
 a.button:hover {
-	border-top-color: #ed8eae;
-	background: #9a083d;
-	-webkit-transition: background .3s ease-in-out;
-	-moz-transition: 	background .3s ease-in-out;
-	transition: 		background .3s ease-in-out;
+	-webkit-box-shadow: rgba(255,255,255,.5) 0 1px 1px;
+	-moz-box-shadow: rgba(255,255,255,.5) 0 1px 1px;
+	box-shadow: rgba(255,255,255,.5) 0 1px 1px;
+	border-top: 1px solid #03161e;
+	color: #ffdde8;
 }
 a.button:active {
-	border-top-color: #ed8eae;
+	-webkit-box-shadow: rgba(255,255,255,.5) 0 1px 1px;
+	-moz-box-shadow: rgba(255,255,255,.5) 0 1px 1px;
+	box-shadow: rgba(255,255,255,.5) 0 1px 1px;
 	background: #74032d;
 	-webkit-transition: background .3s ease-in-out;
 	-moz-transition: 	background .3s ease-in-out;
@@ -561,31 +591,33 @@ button.button {
 	text-align: center;
 	line-height: 14px;
 	border: none;
-	border-top: 1px solid #a0dcf6;
+	border-top: 1px solid #78c0e0;
 	background: #ba114f;
-	background: -webkit-gradient(linear, left top, left bottom, from(#5fb4d9), to(#1a749c));
-	background: -webkit-linear-gradient(top, #5fb4d9, #1a749c);
-	background: -moz-linear-gradient(top, #5fb4d9, #1a749c);
-	background: -ms-linear-gradient(top, #5fb4d9, #ba114f);
-	background: -o-linear-gradient(top, #5fb4d9, #1a749c);
-	padding: 9px 10px 10px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#5db3d8), to(#2f99c7));
+	background: -webkit-linear-gradient(top, #5db3d8, #2f99c7);
+	background: -moz-linear-gradient(top, #5db3d8, #2f99c7);
+	background: -ms-linear-gradient(top, #5db3d8, #2f99c7);
+	background: -o-linear-gradient(top, #5db3d8, #2f99c7);
+	padding: 8px 15px 10px;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
-	-webkit-box-shadow: rgba(0,0,0,1) 0 1px 1px;
-	-moz-box-shadow: rgba(0,0,0,1) 0 1px 1px;
-	box-shadow: rgba(0,0,0,1) 0 1px 1px;
-	text-shadow: rgba(0,0,0,.4) 0 1px 0;
-	color: #fff;
+	-webkit-box-shadow: rgba(0,0,0,0.6) 0 0 3px;
+	-moz-box-shadow: rgba(0,0,0,0.6) 0 0 3px;
+	box-shadow: rgba(0,0,0,0.6) 0 0 3px;
+	text-shadow: rgba(0,0,0,.2) 0 1px 0;
+	color: #cfeaf6;
 	font-size: 14px;
 	font-weight: 500;
 	text-decoration: none;
 	vertical-align: middle;
-	text-shadow: 0px 1px 1px #093e55;
 	text-transform: uppercase;
-	-webkit-transition: background .3s ease-in-out;
-	-moz-transition: 	background .3s ease-in-out;
-	transition: 		background .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: 	all .3s ease-in-out;
+	transition: 		all .3s ease-in-out;
+	cursor: pointer;
+	position: relative;
+	font-family: Ubuntu, "Ubuntu Light", "Ubuntu Condensed";
 }
 
 button.button {
@@ -598,7 +630,52 @@ button.button {
 	background: -o-linear-gradient(top, #dc2c64, #ba114f);
 	cursor: pointer;
 	margin-left: 10px;
+	color: #fff;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: 	all .3s ease-in-out;
+	transition: 		all .3s ease-in-out;
+} 
+
+a.simple-button:hover,
+button.button:hover {
+	color: #fff;
+	border-top: 1px solid #a9d8ed;
+	-webkit-box-shadow: rgba(0,0,0,1) 0 0 2px;
+	-moz-box-shadow: rgba(0,0,0,1) 0 0 2px;
+	box-shadow: rgba(0,0,0,1) 0 0 2px;
 }
+
+a.simple-button:active,
+button.button:active {
+	color: #fff;
+	background: #187eab;
+}
+
+button.button:hover {
+	border-top: 1px solid #fff;
+}
+
+a.b-fb, a.b-mail, button.b-send, a.b-ok {
+	padding-left: 40px;
+}
+
+a.b-save, a.b-view, a.b-friend {	padding-left: 45px;}
+
+a.b-fb span, a.b-mail span, a.b-save span, button.b-send span, a.b-ok span, a.b-view span, a.b-friend span {
+	position: absolute;
+	left: 15px;
+	top: 7px;
+	background: url(../imgs/elements.png) -360px -60px no-repeat;
+	width: 25px;
+	height: 25px;
+}
+
+a.b-mail span {	background: url(../imgs/elements.png) -360px 2px no-repeat;}
+a.b-save span {	background: url(../imgs/elements.png) -420px -60px no-repeat;}
+a.b-ok span {	background: url(../imgs/elements.png) -480px 0 no-repeat;}
+a.b-view span {	background: url(../imgs/elements.png) -420px 2px no-repeat;}
+button.b-send span {	background: url(../imgs/elements.png) -360px 2px no-repeat;}
+a.b-friend span {	background: url(../imgs/elements.png) -480px -60px no-repeat;}
 
 
 .input {

@@ -30,6 +30,7 @@ body {
 .main.container.fixedWidth { width: 860px !important; }
 #container .popup#sharePopup { width: auto; }
 #container .popup#emailPopup { width: 700px; }
+#emailPopup .b-send { margin:20px; }
 #greeting {
     padding-top:20px;
     padding-bottom:20px;

@@ -6,7 +6,8 @@
                     <div class="overlay"></div>
                     <img src="<?php echo base_url() ?>imgs/1x1.gif">
                 </figure>
-            <a href="#" class="simple-button" id="chooseAnotherPic"><?php echo $s['1st-step-face-crop']['choose-another-photo'] ?></a>
+            <a href="#" class="simple-button b-friend" id="chooseAnotherPic"><span></span>
+                <?php echo $s['1st-step-face-crop']['choose-another-photo'] ?></a>
         </section><!-- end editPhotoContainer -->
         <section id="editPhotoTools">
                 <div class="slider-zoom">

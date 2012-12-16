@@ -46,6 +46,7 @@
                             <span></span>
                     </figure>
                 <a href="#" class="simple-button" id="fbPrevStep">
+                <a href="#" class="simple-button b-friend" id="fbPrevStep"><span></span>
                         <?php echo $s['1st-step-upload-from-facebook']['choose-another-friend'] ?>
                 </a>
             </section><!-- end selectedFriend -->

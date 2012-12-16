@@ -13,12 +13,15 @@
 		</section><!-- end #shareBy -->
 		<div class="buttons-container">
 			<a href="#" class="simple-button b-fb" onclick="shareToFB();return false;">
+                            <span></span>
                             <?php echo $s['3rd-step-share-it']['button-share-by-facebook'] ?>
                         </a>
 			<a href="#" class="simple-button b-mail" onclick="showPopup('#emailPopup');return false">
+                            <span></span>
                             <?php echo $s['3rd-step-share-it']['button-share-by-email'] ?>
                         </a>
 			<a href="#" class="simple-button b-save" onclick="promptDownload();return false;">
+                            <span></span>
                             <?php echo $s['3rd-step-share-it']['button-save-to-pc'] ?>
                         </a>
 		</div>
@@ -33,8 +36,8 @@
                     <input type="text" placeholder="<?php echo $s['3rd-step-share-it']['email-send-to-caption'] ?>"
                            class="input email" name="sentTo" id="sentTo"
                            data-error="<?php echo $s['3rd-step-share-it']['email-error-bad-email'] ?>">
-                    <button class="button"
-                            ><?php echo $s['3rd-step-share-it']['email-button-send'] ?>
+                    <button class="button b-send"><span></span>
+                            <?php echo $s['3rd-step-share-it']['email-button-send'] ?>
                     </button>
             </form>
             <h1 class="msg success" style="display:none"><?php echo $s['3rd-step-share-it']['email-success'] ?></h1>

@@ -11,23 +11,23 @@ application/config/production - konfigūracijos production'ui
 
 public_html/css/main.css - pagrindinis dydelis css'o failas, visi mūsų nusakyti stiliai
 
-public_html/css/normalize.css - stilių suderinimas cross-browseriam + boilerplate'o default'ai
+public_html/novaturas/css/normalize.css - stilių suderinimas cross-browseriam + boilerplate'o default'ai
 
 ###JS
-public_html/css/main.js<br />
+public_html/novaturas/css/main.js<br />
 kiekvienam template'e įkraunamas kodas. čia randasi visi
 $(window).resize() ir panašūs dalykai
 
-public_html/css/{template-name}.js<br />
+public_html/novaturas/css/{template-name}.js<br />
     konkrečiai tame faile naudojamas javascript'as
     scipt tag'as pačiam faile
 
 ###HTML Templates
 
-application/views/templates/header.php - &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;
+novaturas/application/views/templates/header.php - &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;
 application/views/templates/footer.php - &lt;/body&gt;&lt;/html&gt;
-application/views/templates/nav.php    - viršutinis meniu su step'ais, volume ir kt.<br />
-application/views/{vaizdas}/main.php - vaizdo template'as sumaunamas tokiu principu:<br />
+novaturas/application/views/templates/nav.php    - viršutinis meniu su step'ais, volume ir kt.<br />
+novaturas/application/views/{vaizdas}/main.php - vaizdo template'as sumaunamas tokiu principu:<br />
 
 - templates/header.php
 - {vaizdas}/main.php
