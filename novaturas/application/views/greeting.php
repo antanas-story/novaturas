@@ -12,10 +12,10 @@
 		<p><?php echo $s['other']['greetin-text'] ?></p>
 		<p class="author">Novaturas</p>
 		<div class="buttons-container">
-			<a href="#" onclick="restartAnimation(); return false" class="simple-button b-repeat"><span></span>
+			<a href="#" onclick="restartAnimation(); return false" title="<?php echo $s['greeting']['repeat-animation'] ?>" class="simple-button b-repeat"><span></span>
 				<?php echo $s['greeting']['repeat-animation'] ?>
 			</a>
-			<a href="<?php echo base_url().$lang ?>/create" class="simple-button b-create"><span></span>
+			<a href="<?php echo base_url().$lang ?>/create" title="<?php echo $s['greeting']['create-your-own'] ?>" class="simple-button b-create"><span></span>
 				<?php echo $s['greeting']['create-your-own'] ?>
 			</a>
 		</div>
