@@ -311,15 +311,23 @@ $(function() {
         showStep("3rd");
     });
     var emailPopup = $("#emailPopup");
+    var showMessage = function(elem, cl, text) {
+	elem.slideUp(300, function() {
+	    elem.removeClass("error").removeClass("success")
+		.addClass(cl).html(text).slideDown(400);
+	});
+    };
     emailPopup.find("button").click(function(e) {
+	var msgElem = emailPopup.find(".msg");
+	var button = $(this);
         e.preventDefault();
         var sentBy = emailPopup.find("#sentBy").val(),
             sentTo = emailPopup.find("#sentTo").val();
         if(sentBy.length <= 0) {
-            alert(emailPopup.find("#sentBy").data("error"));
+            showMessage(msgElem, "error", emailPopup.find("#sentBy").data("error"));
             return;
         } else if(!validateEmail(sentTo)) {
-            alert(emailPopup.find("#sentTo").data("error"));
+            showMessage(msgElem, "error", emailPopup.find("#sentTo").data("error"));
             return;
         }
         var form = emailPopup.find("form");
@@ -329,18 +337,17 @@ $(function() {
             form.serialize(),
             function(response) {
                 if(response == '1') {
-                    form.slideUp(500);
-                    emailPopup.find(".success").slideDown(500);
+		    showMessage(msgElem, "success", button.data("success"));
+		    form[0].reset();
                 } else {
-                    form.slideUp(500)
-                    emailPopup.find(".error").slideDown(500);
+		    showMessage(msgElem, "error", button.data("error"));
                 }
                 console.log("email", response);
-                setTimeout(function() {
+                /*setTimeout(function() {
                     closePopup(emailPopup);
                     form.show().find(".email").val("");
                     emailPopup.find(".msg").hide();
-                }, 2000);
+                }, 2000);*/
             }
         );
     });

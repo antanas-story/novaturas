@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="<?php echo base_url()?>css/main.css">
 
   <script src="<?php echo base_url()?>js/vendor/modernizr-2.6.1.min.js"></script>
+  <script src="<?php echo base_url()?>js/excanvas.compiled.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
   <script>window.jQuery ||

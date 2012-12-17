@@ -99,23 +99,34 @@ function closePopup(selector) {
 
 function init_nav_header() {
         
-    $("#languageSelect").click(function() {
-        var icon = $(this);
-        var dropdown = $("#languageDropdown");
-        if(dropdown.is(":visible")) {
-            icon.removeClass("active");
-            dropdown.hide();
+    var langMouseOutTimeout;
+    var langIcon = $("#languageSelect");
+    var langDropdown = $("#languageDropdown");
+    var langTimeout = function() {
+	langMouseOutTimeout = setTimeout(function() {
+	    langDropdown.slideUp(300);
+	    langIcon.removeClass("active");
+	}, 1000);
+    };
+    langIcon.hover(function() {
+	clearTimeout(langMouseOutTimeout);
+        if(langDropdown.is(":visible")) {
+            /*langIcon.removeClass("active");
+            langDropdown.hide();*/
         } else {
-            icon.addClass("active");
-            dropdown.show();
-            dropdown.position({
+            langIcon.addClass("active");
+            langDropdown.show();
+            langDropdown.position({
                my:"center top",
                at:"center bottom",
-               of:icon,
+               of:langIcon,
                offset:"0 14"
             });
         }
-    });
+    }, langTimeout);
+    langDropdown.hover(function() {
+	clearTimeout(langMouseOutTimeout);
+    }, langTimeout);
     
     audio = document.getElementById("audio");//me;
     audio.volume = 0.6;

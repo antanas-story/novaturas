@@ -49,10 +49,3 @@
             </span>
         </div>
     </header>
-
-<?php
-// Including other template files
-if(!isset($noFaq)) {
-    require APPPATH."/views/1st-step/faq_popup.php";
-}
-?>

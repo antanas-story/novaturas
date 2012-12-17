@@ -417,8 +417,10 @@ sharePopup */
 }
 
 #container #sharePopup #shareBy .mail {
+    display:none;
 	position: relative;
 	margin-top: 20px;
+	padding-left:40px;
 }
 
 #container #sharePopup #shareBy .mail .input {
@@ -431,7 +433,7 @@ sharePopup */
 	height: 30px;
 	background: url(../imgs/elements.png) -120px 0 no-repeat;
 	display: block;
-	left: 80px;
+	left: 70px;
 	top: 7px;
 }
 

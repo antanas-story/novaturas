@@ -5,9 +5,9 @@ class Job_model extends CI_Model {
 	{
 		$this->load->database();
 	}
-	public function fetch($jobId)
+	public function fetch($jobId, $field='id')
 	{
-            $q = $this->db->get_where("job", array('id'=>$jobId));
+            $q = $this->db->get_where("job", array($field=>$jobId));
             return $q->row_array();
 	}
 	public function insert()
@@ -27,6 +27,13 @@ class Job_model extends CI_Model {
             $this->db->insert('job', $data);
             return $this->db->insert_id();
 	}
+        public function update($jobId, $data) {
+            return $this->db->update("job", $data, array("id"=>$jobId));
+        }
+        public function remove($jobId)
+        {
+            return $this->db->delete("job", array("id"=>$jobId));
+        }	
         public function resetFile($jobId, $which) {
 	    return $this->db->update("files", array("which"=>""), array("job"=>$jobId, "which"=>$which));
 	}
@@ -43,17 +50,12 @@ class Job_model extends CI_Model {
         public function deleteFile($jobId, $filename) {
             return $this->db->delete("files", array("job"=>$jobId, "filename"=>$filename));
         }
-        public function update($jobId, $data) {
-            return $this->db->update("job", $data, array("id"=>$jobId));
-        }
-        public function remove($jobId)
-        {
-            return $this->db->delete("job", array("id"=>$jobId));
-        }
+	public function fetchFiles($jobId) {
+	    return $this->db->get_where("files", array('job'=>$jobId,'which !='=>""))->result_array();
+	}
 	public function makePicture($jobId) {
 	    $q = $this->fetch($jobId);
-	    $files = $this->db->get_where("files", array('job'=>$jobId,'which !='=>""))->result_array();
-	    var_dump($files);
+	    $files = $this->fetchFiles($jobId);
 	    $this->load->config("characters");
 	    $characters = $this->config->item('character_info');
             $canvas = $this->config->item('canvas');

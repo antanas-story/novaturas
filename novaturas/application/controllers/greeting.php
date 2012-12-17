@@ -14,15 +14,27 @@ class Greeting extends CI_Controller {
 		if(strpos($greeting, ".jpg")!==false) {
 		    $this->promptDownload($greeting);
 		} else {
+		    $this->load->model("Job_model");
+		    $job = $this->Job_model->fetch($greeting, 'hash');
+		    if(!empty($job)) {
+			$files = $this->Job_model->fetchFiles($job["id"]);
+			$lang = $job["lang"];
+			$data["greeting"] = $job;
+			$data["greeting"]["files"] = $files;
+		    } else {
+			show_404();
+		    }
 		}
-                // TODO Show personalized greeting
-                // check if it exists, else 404
-            }
+            } else {
+		$data["greeting"] = $greeting;
+	    }
             
             $this->load->helper("language_strings");
             $data["s"] = getLanguageStrings($lang);
-            $data["greeting"] = $greeting;
             $data["lang"] = $lang;
+	    $this->config->load('characters');
+            $data["characters"] = $this->config->item('character_info');
+            $data["canvas"] = $this->config->item('canvas');
             
             $this->load->view('templates/header', $data);
             $this->load->view('greeting.php', $data);

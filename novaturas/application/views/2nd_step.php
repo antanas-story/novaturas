@@ -15,10 +15,10 @@
                                 type="text"
                                 placeholder="<?php echo $s['2nd-step-greeting-text']['signature-placeholder'] ?>"
                                 class="input-edit">
-                            <a class="simple-button b-view" id="2nd-step-review" href="#">
+                            <!--<a class="simple-button b-view" id="2nd-step-review" href="#">
                                 <span></span>
                                 <?php echo $s['2nd-step-greeting-text']['review-greeting'] ?>
-                            </a>
+                            </a>-->
                             <a class="simple-button b-ok" id="2nd-step-done" href="#">
                                 <span></span>
                                 <?php echo $s['2nd-step-greeting-text']['button-headline'] ?>

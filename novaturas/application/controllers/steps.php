@@ -10,14 +10,23 @@ class Steps extends CI_Controller {
             
             $this->load->model('Job_model');
             $this->jobId = $this->session->userdata("jobId");
-            if($this->session->userdata("language")==false) {
-                $this->session->set_userdata("language", "lt");
-            }
-            if($this->jobId==false || isset($_GET['newJob'])) {
+	    if($this->jobId==false || isset($_GET['newJob'])) {
                 $this->jobId = $this->Job_model->insert();
                 $this->session->set_userdata("jobId", $this->jobId);
                 header("Location: ".  base_url().$this->session->userdata('language')."/create");
+            } else {
+		$job = $this->Job_model->fetch($this->jobId);
+		if(empty($job)) {
+		    $this->jobId = $this->Job_model->insert();
+		    $this->session->set_userdata("jobId", $this->jobId);
+		}
+	    }
+	    
+	    
+            if($this->session->userdata("language")==false) {
+                $this->session->set_userdata("language", "lt");
             }
+            
             $this->job = $this->Job_model->fetch($this->jobId);
         }
 	public function create($lang)
@@ -41,11 +50,16 @@ class Steps extends CI_Controller {
 	}
         
         public function update(){
+	    $this->load->model('Job_model');
+	    if(isset($_POST['fb'])&&$_POST['fb']==1) {
+		$this->Job_model->update($this->jobId, array("shared"=>1));
+		return;
+	    }
+	    
             $data["headline"] = $_POST['greeting']['headline'];
             $data["text"] = $_POST['greeting']['text'];
             $data["signedBy"] = $_POST['greeting']['signedBy'];
 	    
-            $this->load->model('Job_model');
             $this->Job_model->update($this->jobId, $data);
 	    
 	    if(is_array($_POST['avatars'])) {

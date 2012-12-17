@@ -31,15 +31,18 @@ body {
 .main.container.fixedWidth { width: 860px !important; }
 #container .popup#sharePopup { width: auto; }
 #container .popup#emailPopup { width: 700px; }
-#emailPopup .b-send { margin:20px; }
+#emailPopup .b-send { margin:20px; margin-bottom: 0; }
 #greeting {
     padding-top:20px;
     padding-bottom:20px;
 }
 #greetingMain {
     margin-top:0px;
+    cursor:pointer;
     margin-bottom:0px;
 }
+#greetingMain #canvas { width:100%; height:100%; }
+#greetingMain img { display: none; }
 
 /* ==========================================================================
    Popup. General popup styles, along with overlay

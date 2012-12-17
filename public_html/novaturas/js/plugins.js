@@ -243,8 +243,8 @@ jQuery.fn.center = function(parent) {
     }
     this.css({
         "position": "absolute",
-        "top": (Math.max(0, (($(parent).height() - this.outerHeight()) / 2) ) + "px"),
-        "left": (Math.max(0, (($(parent).width() - this.outerWidth()) / 2) ) + "px")
+        "top": (Math.max(0, (($(parent).outerHeight() - this.outerHeight()) / 2) ) + "px"),
+        "left": (Math.max(0, (($(parent).outerWidth() - this.outerWidth()) / 2) ) + "px")
     });
 return this;
 };
