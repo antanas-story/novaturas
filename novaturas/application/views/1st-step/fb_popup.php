@@ -43,12 +43,9 @@
             <section id="selectedFriend">
                     <figure class="selected-user">
                             <img src="<?php echo base_url() ?>imgs/1x1.gif" width="50" height="50" title="">
-                            <span></span>
+							<?php echo $s['1st-step-upload-from-facebook'] ?><!-- current facebook name & <br> between first & last name-->
                     </figure>
-                <a href="#" class="simple-button" id="fbPrevStep">
-                <a href="#" class="simple-button b-friend" id="fbPrevStep"><span></span>
-                        <?php echo $s['1st-step-upload-from-facebook']['choose-another-friend'] ?>
-                </a>
+                <a href="#" class="simple-button b-friend" id="fbPrevStep"><span></span><?php echo $s['choose-another-friend'] ?></a>
             </section><!-- end selectedFriend -->
             <section id="imgFbThumbs">
                 <h2><span><?php echo $s['1st-step-upload-from-facebook']['choose-picture-headline'] ?></span></h2>
