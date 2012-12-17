@@ -20,5 +20,6 @@
 			</a>
 		</div>
 	</div><!-- end of #greetingPopup -->
+	<footer style="margin-bottom: 30px;"></footer>
 </div><!--! end of #greeting -->
 <script src="<?php echo base_url() ?>js/greeting.js"type="text/javascript"></script>
