@@ -13,10 +13,7 @@
               <?php /* data-picture="http://novaturas.story.lt/uploads/019.jpg" */ ?>
               data-rotation="0"
               data-scale="<?php echo $info["scale"]; ?>">
-            <span class="face">
-                <img alt="" />
-            </span>
-            <span class="see-through"></span>
+            <canvas class="face" height="143" width="143"></canvas>
             <span class="default-face" style="background-image: url('<?php echo base_url() ?>imgs/avatar-<?php echo $name; ?>.png');"></span>
         </span>
         <?php endforeach; ?>

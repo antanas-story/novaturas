@@ -52,5 +52,7 @@
 
 <?php
 // Including other template files
-require APPPATH."/views/1st-step/faq_popup.php";
+if(!isset($noFaq)) {
+    require APPPATH."/views/1st-step/faq_popup.php";
+}
 ?>

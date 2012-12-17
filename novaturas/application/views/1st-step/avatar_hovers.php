@@ -22,8 +22,8 @@
     <canvas id="cropped-<?php echo $name; ?>"
           data-id="<?php echo $name; ?>"
           class="avatar-cropped"
-          width="<?php echo $canvas["maxAvatar"]; ?>"
-          height="<?php echo $canvas["maxAvatar"]; ?>"
+          width="143"
+          height="143"
           style="<?php echo $style; ?>"
         ></canvas>
 

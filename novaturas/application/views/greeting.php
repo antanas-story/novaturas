@@ -1,6 +1,9 @@
-
-<div id="container" class="container greeting">
-    
+<div id="container" class="container greeting anim">
+    <?php
+    // Navigation header menu
+    $noFaq = true;
+    require APPPATH."/views/templates/nav.php";
+    ?>
     <div id="greetingMain" class="main" role="main">
     </div><!--! end of #greetingMain -->
     
@@ -17,6 +20,7 @@
         </a>
                     </p>
     </div><!-- end of #greetingPopup -->
+    <footer style="height:48px"></footer>
 </div><!--! end of #greeting -->
 
 <!--<div id="greetingPopup" class="popup with-overlay">

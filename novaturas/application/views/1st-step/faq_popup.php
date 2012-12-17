@@ -1,4 +1,4 @@
-<div id="faqPopup" class="popup with-overlay show-at-once">
+<div id="faqPopup" class="popup with-overlay <?php if(!isset($_GET['nofaq'])) echo "show-at-once"; ?>">
     <a href="#" class="close-button" onclick="closePopup();return false;" title="close-button-txt"></a>
         <section id="step1">
                 <div class="step"><span>1</span></div>

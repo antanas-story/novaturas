@@ -9,6 +9,13 @@
 */
 $config["canvas"] = array("width"=>1246, "height"=>713, "maxAvatar"=>116,
         "cropOffset"=>array("x"=>172,"y"=>127));
+/*
+ * bounding box of cropper
+width: 143px;
+height: 143px;
+top: 128px;
+left: 182px;
+*/
 
 $config["character_info"]["plane-man"] = array("x"=>336,"y"=>60,"scale"=>72);
 $config["character_info"]["plane-woman"] = array("x"=>275,"y"=>65,"scale"=>72);

@@ -4,6 +4,14 @@
         <section id="editPhotoContainer">
                 <figure>
                     <div class="overlay"></div>
+                    <?php /*<div class="just-temp" style="
+position:absolute;
+background:#555;
+opacity:.4; width:143px; height:143px;
+left:182px; top:128px;
+z-index:2000;
+
+"></div>*/ ?>
                     <img src="<?php echo base_url() ?>imgs/1x1.gif">
                 </figure>
             <a href="#" class="simple-button b-friend" id="chooseAnotherPic"><span></span>

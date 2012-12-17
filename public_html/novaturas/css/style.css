@@ -343,7 +343,7 @@ editPhotoPopup */
 	position: absolute;
 	top: 2px;
         z-index:30;
-	left: 150px;
+	left: 180px;
 	width: 20px;
 	height: 20px;
 	float: left;
@@ -361,7 +361,6 @@ editPhotoPopup */
 	-moz-box-shadow: rgba(0,0,0,.8) 0px 0px 4px;
 	box-shadow: rgba(0,0,0,.8) 0px 0px 4px;
 	cursor: pointer;
-	margin: 0 30px;
 }
 
 #container #editPhotoTools .slider .point:hover {

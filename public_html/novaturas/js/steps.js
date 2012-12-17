@@ -54,8 +54,7 @@ $(function() {
     $("#chooseAnotherPic").click(function(e) {
         e.preventDefault();
         closePopup();
-        var pic = $("#editPhotoPopup").data("current").data("picture");
-        console.log(pic);
+        var pic = avatars.filter(".active").data("picture");
         if(pic.indexOf(basePath) >= 0) {
             $("#from-pc").click();
         } else $("#from-fb").click();
@@ -245,9 +244,9 @@ $(function() {
         e.preventDefault();
         var active = avatars.filter(".active");
         active.removeData("picture").click();
-        active.find("img").hide();
+        active.find(".face").hide();
         active.find(".default-face").show();
-        
+        $("#cropped-" +active.attr("id")).hide();
     });
 
     
@@ -394,16 +393,20 @@ function initCropping() {
     var sliders = cropper.find(".slider");
     sliders.click(function(e) {
         var point = $(this).find(".point");
-        point.css("left", e.offsetX - (point.width()/2));
-        this.update(e.offsetX);
+        var padding = parseInt($(this).css("padding-left"));
+        var x = e.offsetX - (point.width()/2)
+        if(x > 0 && x < $(this).width()) {
+            point.css("left", x+padding);
+            this.update(e.offsetX);
+        }
     });
     sliders.filter(".zoom")[0].update =  function(left) {
-        var scale = (30+left)/180;
-        $image.data("scale", scale)
+        var scale = (left)/180;
+        $image.data("scale", scale);
         setTransform(image, $image.data("deg"), scale);
     };
     sliders.filter(".rotate")[0].update = function(left) {
-        deg = (left-150)*1.2;
+        deg = (left-180)*1.2;
         $image.data("deg", deg);
         setTransform(image, deg, $image.data("scale"));
     };
@@ -426,53 +429,86 @@ function initCropping() {
          e.preventDefault();
             
          var active = avatars.filter(".active"),
-            img = active.find("img"),
-            left = parseInt($image.css("left")) - 172,
-            top = parseInt($image.css("top")) - 127,
-            src = active.data("picture"),
             deg = $image.data("deg"),
             scale = $image.data("scale");
-         
+         $image.css("transform", "");
+         var imgPos = $image.position(),
+            img = new Image();
+            
+         img.src = active.data("picture");
          active.find(".default-face").hide();
-         img[0].src = src;
+         /*img[0].src = src;
          img.css({
              transform:$image.css("transform"),
              left: left+"px",
              top: top+"px"
-         }).show();
-     
-         spawnCroppedFace(active, src, left, top, scale, deg);
+         }).show();*/
+         initCroppedFace($("#cropped-"+active.attr("id")), img, imgPos, scale, deg, ellipAvatarPath);
+         initCroppedFace(active.find(".face"), img, imgPos, scale, deg, circleAvatarPath);
+         
          
          closePopup();
          active.click();
     });
 }
 
-function spawnCroppedFace(active, src, left, top, scale, deg) {
-    var canvas = $("#cropped-"+active[0].id);
-    var img = new Image();
-        img.src = src;
-    
+function initCroppedFace(canvas, img, position, scale, deg, pathingFunction) {
+    var rads = degToRad(deg),
+        /*sin = Math.sin(rads),
+        cos = Math.cos(rads),*/
+        scaleOffset = canvas[0].width/143,
+        left = position.left-182,
+        top = position.top-128,
+        imgWidthHalf = img.width*0.5,
+        imgHeightHalf = img.height*0.5;
+    //scale = scale;
     var ctx = canvas[0].getContext("2d");
     ctx.clearRect(0, 0, canvas[0].width, canvas[0].height);
     ctx.save();
+    var callback = pathingFunction(ctx);
+    ctx.translate(left+imgWidthHalf, top+imgHeightHalf);
+    ctx.rotate(rads);
+    ctx.scale(scale, scale);
+	
+    /*ctx.transform(
+        cos*scale, sin*scale,
+        -sin*scale, cos*scale,
+        0,0);*/
+	ctx.translate(-imgWidthHalf, -imgHeightHalf);
+    ctx.drawImage(img, 0, 0);
+    ctx.restore();
+    if(callback!=undefined) callback(ctx);
+    canvas.show();
+    console.log("canvas", canvas[0].width, canvas[0].height)
+    console.log("deg", deg, rads);
+    console.log("scale", scale, scaleOffset);
+    console.log("x, y", position)
+}
+function ellipAvatarPath(ctx) {
     ctx.beginPath();
-    ctx.moveTo(106, 58.5);
-    ctx.bezierCurveTo(106, 90.5, 84.6, 116, 58.0, 116);
-    ctx.bezierCurveTo(31.4, 116, 9.8, 90.5, 9.8, 58.5);
-    ctx.bezierCurveTo(9.8, 26.5, 31.4, 0, 58.0, 0);
-    ctx.bezierCurveTo(84.6, 0, 106.2, 26.5, 106.2, 58.5);
+      ctx.moveTo(130.9, 71.5);
+      ctx.bezierCurveTo(130.9, 111.0, 104.3, 143.0, 71.5, 143.0);
+      ctx.bezierCurveTo(38.7, 143.0, 12.1, 111.0, 12.1, 71.5);
+      ctx.bezierCurveTo(12.1, 32.0, 38.7, 0.0, 71.5, 0.0);
+      ctx.bezierCurveTo(104.3, 0.0, 130.9, 32.0, 130.9, 71.5); 
     ctx.closePath();
     ctx.clip();
-    
-    ctx.rotate(degToRad(deg));
-    ctx.scale(scale, scale);
-    ctx.drawImage(img, left, top);
-    
-    ctx.restore();
-    canvas.show();
 }
-
+function circleAvatarPath(ctx) {
+    ctx.beginPath();
+    ctx.moveTo(131.7, 72.2);
+    ctx.bezierCurveTo(131.7, 105.4, 104.8, 132.3, 71.6, 132.3);
+    ctx.bezierCurveTo(38.3, 132.3, 11.4, 105.4, 11.4, 72.2);
+    ctx.bezierCurveTo(11.4, 38.9, 38.3, 12.0, 71.6, 12.0);
+    ctx.bezierCurveTo(104.8, 12.0, 131.7, 38.9, 131.7, 72.2);
+    ctx.closePath();
+    ctx.clip();
+    return function(ctx) {
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+    };
+}	
 function showStep(step) {
     $(".step.container").hide();
     $("#"+step+"-step").show();
@@ -493,4 +529,4 @@ function validateEmail(email) {
 }
 function degToRad (d) {
     return (d * (Math.PI / 180));
-}       
+}

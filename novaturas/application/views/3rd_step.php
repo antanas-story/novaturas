@@ -7,6 +7,7 @@
                                 <input type="text"
                                        value="<?php echo base_url().$job["hash"] ?>"
                                        class="input"
+                                       id="url"
                                        readonly="readonly"
                                        data-url="<?php echo base_url()."i/{$job["hash"]}.jpg" ?>">
 			</div>
@@ -75,7 +76,7 @@ function shareToFB() {
       method: 'feed',
       //redirect_uri: 'YOUR URL HERE',
       link: $('#url').val(),
-      picture: '<?php echo base_url() ?>imgs/example-postcard.ng',
+      picture: '<?php echo base_url() ?>imgs/example-postcard.png',
       name: '<?php echo $s['facebook']['post-title'] ?>',
       //caption: '',
       description: '<?php echo $s['facebook']['post-description'] ?>'
