@@ -626,7 +626,8 @@ button.button {
 }
 
 button.button,
-a.b-create {
+a.b-create,
+a.b-ok {
 	border-top: 1px solid #ed8eae;
 	background: #ba114f;
 	background: -webkit-gradient(linear, left top, left bottom, from(#dc2c64), to(#ba114f));
@@ -644,7 +645,8 @@ a.b-create {
 
 a.simple-button:hover,
 button.button:hover,
-a.b-create:hover {
+a.b-create:hover,
+a.b-ok:hover {
 	color: #fff;
 	border-top: 1px solid #a9d8ed;
 	-webkit-box-shadow: rgba(0,0,0,1) 0 0 2px;
@@ -659,7 +661,8 @@ button.button:active {
 }
 
 button.button:hover,
-a.b-create:hover {
+a.b-create:hover,
+a.b-ok:hover {
 	border-top: 1px solid #fff;
 }
 
