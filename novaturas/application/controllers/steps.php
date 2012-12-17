@@ -41,11 +41,23 @@ class Steps extends CI_Controller {
 	}
         
         public function update(){
-            $data["headline"] = $_POST['headline'];
-            $data["text"] = $_POST['text'];
-            $data["signedBy"] = $_POST['signedBy'];
-            
+            $data["headline"] = $_POST['greeting']['headline'];
+            $data["text"] = $_POST['greeting']['text'];
+            $data["signedBy"] = $_POST['greeting']['signedBy'];
+	    
             $this->load->model('Job_model');
-            echo $this->Job_model->update($this->jobId, $data);
+            $this->Job_model->update($this->jobId, $data);
+	    
+	    if(is_array($_POST['avatars'])) {
+		foreach($_POST['avatars'] as $which=>$info) {
+		    if(is_array($info)) {
+			$info["which"]=$which;
+			$this->Job_model->updateFile($this->jobId, $info["filename"], $info);
+		    } else {
+			$this->Job_model->resetFile($this->jobId, $which);
+		    }
+		}
+	    }
+	    echo "done ".$this->Job_model->makePicture($this->jobId);;
         }
 }

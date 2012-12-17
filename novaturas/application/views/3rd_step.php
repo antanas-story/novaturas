@@ -9,7 +9,7 @@
                                        class="input"
                                        id="url"
                                        readonly="readonly"
-                                       data-url="<?php echo base_url()."i/{$job["hash"]}.jpg" ?>">
+                                       data-url="<?php echo base_url()."{$job["hash"]}.jpg" ?>">
 			</div>
 		</section><!-- end #shareBy -->
 		<div class="buttons-container">
@@ -89,6 +89,6 @@ function shareToFB() {
     FB.ui(obj, callback);
 }
 function promptDownload() {
-    window.open( $('#url').data("img") );
+    window.open( $('#url').data("url") );
 }
 </script>

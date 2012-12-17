@@ -163,7 +163,8 @@ $(function() {
                         fbImgSlider.append(clone);
                     }
                     friend.find("img").attr("src", selected.find("img").attr("src"));
-                    friend.find("span").html(selected.data("name"));
+		    var nameLined = selected.data("name").replace(" ", "<br />");
+                    friend.find("figure span").html(nameLined);
                 }
                 console.log("friend's photos response", response);
             });
@@ -243,7 +244,7 @@ $(function() {
     $("#delete-pic").click(function(e) {
         e.preventDefault();
         var active = avatars.filter(".active");
-        active.removeData("picture").click();
+        active.removeData("picture").click().removeClass("cropped");
         active.find(".face").hide();
         active.find(".default-face").show();
         $("#cropped-" +active.attr("id")).hide();
@@ -307,12 +308,6 @@ $(function() {
         step = 3;
         e.preventDefault();
         
-        var form = $("#greetingEdit form");
-        $.post(basePath + "update", form.serialize(), function(response) {
-            console.log("updated", response);
-        });
-        form.serialize();
-            
         showStep("3rd");
     });
     var emailPopup = $("#emailPopup");
@@ -434,17 +429,27 @@ function initCropping() {
          $image.css("transform", "");
          var imgPos = $image.position(),
             img = new Image();
-            
+         
+	 
+	 active.addClass("cropped").data("info", {
+	     deg:deg,
+	     scale:scale,
+	     filename:active.data("picture"),
+	     left:imgPos.left,
+	     top:imgPos.top
+	 });
+	 img.onload = function() {
+	    active.find(".default-face").hide();
+	    initCroppedFace($("#cropped-"+active.attr("id")), img, imgPos, scale, deg, ellipAvatarPath);
+	    initCroppedFace(active.find(".face"), img, imgPos, scale, deg, circleAvatarPath);
+	 };
          img.src = active.data("picture");
-         active.find(".default-face").hide();
          /*img[0].src = src;
          img.css({
              transform:$image.css("transform"),
              left: left+"px",
              top: top+"px"
          }).show();*/
-         initCroppedFace($("#cropped-"+active.attr("id")), img, imgPos, scale, deg, ellipAvatarPath);
-         initCroppedFace(active.find(".face"), img, imgPos, scale, deg, circleAvatarPath);
          
          
          closePopup();
@@ -513,6 +518,7 @@ function showStep(step) {
     $(".step.container").hide();
     $("#"+step+"-step").show();
     $("header a.step."+step).addClass("active").attr("href","#");
+    if(step=="3rd") postChanges();
     $(window).resize();            
 }
 function highlightString(needle, haystack) {
@@ -529,4 +535,24 @@ function validateEmail(email) {
 }
 function degToRad (d) {
     return (d * (Math.PI / 180));
+}
+
+function postChanges() {
+    var data = { greeting: {}, avatars: {} };
+    var form = $("#greetingEdit form");
+    form.find("textarea,input").each(function() {
+	data.greeting[this.name] = this.value;
+    });
+    
+    avatars.each(function(index, elem) {
+	data.avatars[elem.id] = $(this).is(".cropped") ? $(elem).data("info") : "";
+	data.avatars[elem.id].cropped = $("#cropped-"+this.id)[0].toDataURL("image/png");
+    });
+    
+    var post = $.param(data);
+    console.log("updating with", data, post);
+    $.post(basePath + "update", post, function(response) {
+	console.log("updated, got response", response);
+    });
+    form.serialize();
 }

@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'truestor_nov';
-$db['default']['password'] = 'Novaturas123';
-$db['default']['database'] = 'truestor_main';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
+$db['default']['database'] = 'novaturas';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = 'n_';
 $db['default']['pconnect'] = TRUE;

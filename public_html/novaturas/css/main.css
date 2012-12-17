@@ -350,6 +350,7 @@ footer .button {
 	border: 5px solid #fff;
         border-radius: 8px;
         font-weight:300;
+	z-index:900;
         -webkit-box-shadow: 0px 0px 35px rgba(50, 50, 50, 0.75);
         -moz-box-shadow:    0px 0px 35px rgba(50, 50, 50, 0.75);
         box-shadow:         0px 0px 35px rgba(50, 50, 50, 0.75);

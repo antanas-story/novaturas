@@ -29,7 +29,7 @@ class Uploader extends CI_Controller {
             $result["filename"] = $uploadedName;
             
             $this->load->model('Job_model');
-            $this->jobId = $this->Job_model->addFile($this->jobId, $uploadedName);
+            $this->Job_model->addFile($this->jobId, base_url()."uploads/".$uploadedName);
         }
         echo json_encode($result);
     }

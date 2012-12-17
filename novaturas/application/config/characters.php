@@ -8,7 +8,8 @@
 |
 */
 $config["canvas"] = array("width"=>1246, "height"=>713, "maxAvatar"=>116,
-        "cropOffset"=>array("x"=>172,"y"=>127));
+    "croppedSize"=>143,    
+    "cropOffset"=>array("x"=>182,"y"=>128));
 /*
  * bounding box of cropper
 width: 143px;

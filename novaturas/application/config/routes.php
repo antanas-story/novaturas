@@ -47,7 +47,7 @@ $route['([a-zA-Z]{2})/create'] = 'steps/create/$1';
 
 $route['([a-zA-Z]{2})/(:any)'] = 'greeting/view/$1/$2';
 $route['([a-zA-Z]{2})'] = 'greeting/view/$1';
-$route['(:any)'] = 'greeting/view/lt';
+$route['(:any)'] = 'greeting/view/lt/$1';
 $route['default_controller'] = 'greeting/view/lt';
 
 /* End of file routes.php */
