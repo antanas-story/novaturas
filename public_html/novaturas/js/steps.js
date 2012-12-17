@@ -163,7 +163,8 @@ $(function() {
                         fbImgSlider.append(clone);
                     }
                     friend.find("img").attr("src", selected.find("img").attr("src"));
-                    friend.find("span").html(selected.data("name"));
+		    var nameLined = selected.data("name").replace(" ", "<br />");
+                    friend.find("figure span").html(nameLined);
                 }
                 console.log("friend's photos response", response);
             });
